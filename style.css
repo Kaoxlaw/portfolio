@@ -1,0 +1,76 @@
+/* GENERAL */
+
+body{
+    font-family: "Oxygen", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: bold;
+}
+img{
+    max-width: 100% ;
+    height: auto;
+}
+section{
+    padding: 45px 0 80px 0;
+}
+section .heading{
+    text-align: center;
+    padding-bottom: 40px;
+}
+section .heading h2{
+    text-transform: uppercase;
+}
+
+
+/* ABOUT */
+
+#about{
+    padding-top: 230px;
+}
+
+#about .heading h1{
+    color: grey;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+}
+#about .heading h3{
+    color:#000;
+}
+#about .heading p{
+    color:#000;
+    font-style: italic;
+}
+.button1{
+    font-weight: bold;
+    text-transform: uppercase;
+    color:grey;
+    border: 1px solid black;
+    display: inline-block;
+    margin-top : 20px;
+    padding: 18px 50px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in 0s;
+}
+.button1:hover{
+    background: white;
+    color: #66a3ff;
+    text-decoration: none;
+}
+.parallax {
+    /* The image used */
+    background-image: url('photo/totoro.jpg');
+
+    /* Full height */
+    height: 100vh; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.75;
+}
+
+
+

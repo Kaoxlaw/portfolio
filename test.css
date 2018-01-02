@@ -1,0 +1,441 @@
+body {
+	margin: 0; padding: 0; /* annulation des marges */
+	overflow: hidden; /* on cache le débordement de contenu */
+	color: #fff;
+	background: #000;
+	font-family: "Oxygen", sans-serif;
+}
+
+#wrap {
+	/* position du conteneur pour le préparer à bouger */
+	position: relative;
+	top: 0;
+	/* on prépare la transition à venir */
+	transition: top 1.4s cubic-bezier(.49,.22,.52,1.35);
+}
+
+#nav {
+	/* on fixe le menu en haut */
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	padding: 1em 0;
+	margin: 0;
+	/* on centre les liens */
+	text-align: center;
+	background: rgb(172, 172, 172);
+}
+
+#nav li {
+	/* on aligne les éléments de liste */
+	display: inline;
+	margin:0;
+}
+
+#nav a {
+	/* on applique des marges aux liens */
+	display: inline-block;
+	margin: 0 3em;
+	color: #eee;
+	/* on applique une petite lueur */
+	text-shadow: 0 0 5px #fff;
+	/* on prévoit une petite transition (lueur) */
+	transition: all 1s;
+}
+
+.slide_inside {
+	
+	/* position: relative; */
+	background-color: rgba(207, 207, 207, 0.198);
+	padding: 50px;
+	border-radius: 5px;
+}
+
+/* slides */
+#slide1{
+	/*images de fond */
+	background: url(photo/totoro.jpg) center 0 no-repeat fixed;
+
+	/* height à adapter avec media queries */
+	height: 900px;
+	padding: 150px 200px;
+
+	/* préparation des transitions */
+	transition: background-position 1.7s  cubic-bezier(.49,.22,.52,1.35);
+
+	color: #3c5e9c;
+}
+
+#slide1 p{
+	color: #4f7dd3;
+}
+
+#slide1 .slide_inside {
+	text-align: center;
+}
+
+                                                           /* Slide 2*/
+#slide2{
+	/*images de fond */
+	background: url(photo/bighero.jpg) center 0 no-repeat fixed; 
+
+	/* height à adapter avec media queries */
+	height: 900px;
+	padding: 150px 200px;
+	
+	/* préparation des transitions */
+	transition: background-position 1.4s  cubic-bezier(.49,.22,.52,1.35);
+
+	color: #3c5e9c
+}
+
+#slide2 p{
+	color: #4f7dd3;
+}
+
+#slide2 .slide_inside {
+	text-align: center;
+}
+
+#slide2 .row {
+    margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+#slide2 .row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+#slide2 .column {
+    float: left;
+    width: 25%;
+}
+
+/* Clear floats after rows */ 
+#slide2 .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+#slide2 .content {
+    background-color: rgba(255, 255, 255, 0.849);
+		padding: 10px;
+		position: relative;
+}
+#slide2 .image {
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: hidden;
+}
+#slide2 .middle {
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%)
+}
+#slide2 .content:hover .image {
+	opacity: 0.3;
+}
+#slide2 .content:hover .middle {
+	opacity: 1;
+}
+
+#slide2 .text {
+	background-color: rgb(179, 179, 179);
+	color: rgb(32, 47, 184);
+	font-size: 10px;
+	padding: 16px 32px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+#slide2 @media (max-width: 900px) {
+    .column {
+        width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+#slide2 @media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+                                                        /* slide 3 */
+#slide3 {
+	/*images de fond */
+	background: url(photo/yourname.png) center 0 no-repeat fixed;
+
+	/* height à adapter avec media queries */
+	height: 1000px;
+	padding: 5px 200px;
+
+	/* préparation des transitions */
+	transition: background-position 1.4s  cubic-bezier(.49,.22,.52,1.35);
+
+	color: #3c5e9c;
+}
+#slide3 .slide_inside {
+	text-align: center;
+	margin-top: 40px;
+	padding: 20px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#slide3 .row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+#slide3 .column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+#slide3 .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+#slide3 @media (max-width: 800px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+#slide3 @media (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+                                                            /* Slide 4 */
+#slide4{
+	/*images de fond */
+	background: url(photo/hp.jpg) center 0 no-repeat fixed;
+
+	/* height à adapter avec media queries */
+	height: 1000px;
+	padding: 500px 200px;
+
+	/* préparation des transitions */
+	transition: background-position 1.4s  cubic-bezier(.49,.22,.52,1.35);
+
+	color: #3c5e9c;
+}
+#slide4 .slide_inside {
+
+	background-color: rgba(207, 207, 207, 0.671);
+	padding: 20px;
+	text-align: center;
+}
+
+                                                                               /* Slide 5 */
+#slide5 {
+	/*images de fond */
+	background: url(photo/01-111.jpg) center 0 no-repeat fixed;
+
+	/* height à adapter avec media queries */
+	height: 1000px;
+	padding: 100px 200px;	
+
+	/* préparation des transitions */
+	transition: background-position 1.4s  cubic-bezier(.49,.22,.52,1.35);
+
+	color: #9eb5e0;
+	
+}
+#slide5 .slide_inside {
+	text-align: center;
+}
+
+#slide5 .slide_contact {
+}
+
+#MonFormulaire {
+	width:50%; 
+	margin:0 auto; 
+	font-size:0.85em;
+}
+#MonFormulaire ul{
+	padding-left:0px;
+}
+#MonFormulaire li{
+	background-color:rgb(255,255,255); 
+	line-height:3em; 
+	border-radius:0.5em; 
+	list-style:none; 
+	padding:0.5em; 
+	margin-bottom:0.5em; 
+	transition:box-shadow 0.5s ease; 
+	border: 1px solid rgb(220,220,220);
+}
+#MonFormulaire li:hover{
+	box-shadow:0 0 10px rgb(180,180,180);
+}
+#MonFormulaire li label, #MonFormulaire li input{
+	display:inline-block;
+}
+#MonFormulaire label{
+	margin-left:1em; 
+	width:140px; 
+	text-align:left;
+}
+#MonFormulaire input{
+	font-size:0.85em; width:65%; 
+	height:2.5em; 
+	border:none; 
+	text-align:center; 
+	border-left:1px solid rgb(150,150,150); 
+	margin-left:1em; 
+	background:transparent;
+}
+#MonFormulaire textarea{
+	width:98%; 
+	height:14em; 
+	font-size:0.85em; 
+	padding:0.5em; 
+	border:none; 
+	text-align:center;
+}
+
+#MonFormulaire button#Btn-Submit{
+	background-color:rgb(38,38,40); 
+	color:rgb(255,255,255); 
+	font-family:'Verdana'; 
+	font-size:1em; 
+	text-transform:uppercase; 
+	width:300px; 
+	margin:1em auto; 
+	border:none; 
+	cursor:pointer; 
+	border-radius:0.4em; 
+	transition: background 0.5s ease, border-radius 0.5s ease; 
+	padding:1em 0; 
+	float:right;
+}
+
+#MonFormulaire button#Btn-Submit:hover{
+	background-color:rgb(92,173,171); 
+	text-shadow:2px 2px 0 rgb(65,122,121); 
+	border-radius:0.6em;
+}
+
+@media screen and (max-width: 1115px){
+  #MonFormulaire{
+    width:500px;
+  }
+}
+
+/* positionnement des personnages animés*/
+/*#trooper, #clone {
+	/*position: absolute;
+	left:-180px; top: 300px;
+	/* on tourne légèrement les images */
+	/*transform: rotate(10deg);
+	/* et on prévoit une transition */
+	/*transition: all 1.4s cubic-bezier(.49,.22,.52,1);*/
+/* } */
+/* positionnement différé d'un des 2 personnages */
+/* #clone { */
+	/*left: -280px;
+	top: 400px;*/
+/* } */
+
+/* décalage du conteneur vers le haut */
+#s2:target ~ #wrap {
+	top:-900px;
+}
+
+/* décalage des fonds de chaque slide */
+#s2:target ~ #wrap #slide1 { background-position: 50% 500%; }
+#s2:target ~ #wrap #slide2 { background-position: 50% 00%; }
+#s2:target ~ #wrap #slide3 { background-position: 50% -50%; }
+#s2:target ~ #wrap #slide4 { background-position: 50% -100%; }
+#s2:target ~ #wrap #slide5 { background-position: 50% -150%; }
+
+/* mouvements d'un des personnages */
+/*#s2:target ~ #wrap #trooper { 
+	left: -180px;
+	top: -100px;
+	transform: rotate(-7deg);
+}*/
+
+/* mouvements de l'autre personnage */
+/*#s2:target ~ #wrap #clone {
+	left: -350px;
+	top: 50px;
+	transform: rotate(0deg);
+}*/
+
+/* juste pour la déco (lueur sur le lien cliqué) */
+#s2:target ~ #wrap #nav li:first-child + li a {
+	text-shadow: 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603;
+}
+
+/* vers Slide 1 */
+#s1:target ~ #wrap { top:0px; }
+#s1:target ~ #wrap #nav li:first-child a { text-shadow: 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603; }
+
+#s1:target ~ #wrap #slide2 { background-position: 50% -50%; }
+#s1:target ~ #wrap #slide3 { background-position: 50% -100%; }
+#s1:target ~ #wrap #slide4 { background-position: 50% -150%; }
+#s1:target ~ #wrap #slide5 { background-position: 50% -200%; }
+/*#s1:target ~ #wrap #trooper { left: -180px; top: 300px; transform: rotate(10deg); }
+#s1:target ~ #wrap #clone { left: -280px; top: 300px; transform: rotate(10deg); }*/
+
+/* vers Slide 3 */
+#s3:target ~ #wrap { top:-1800px; }
+#s3:target ~ #wrap #nav li:first-child + li + li a { text-shadow: 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603; }
+#s3:target ~ #wrap #slide1 { background-position: 50% 100%; }
+#s3:target ~ #wrap #slide2 { background-position: 50% 50%; }
+#s3:target ~ #wrap #slide3 { background-position: 50% 0%; }
+#s3:target ~ #wrap #slide4 { background-position: 50% -50%; }
+#s3:target ~ #wrap #slide5 { background-position: 50% -100%; }
+/*#s3:target ~ #wrap #trooper { left:-1500px;top:-1000px; transform: rotate(-15deg); }
+#s3:target ~ #wrap #clone { left:-1000px;top: -800px; transform: rotate(-15deg); }
+*/
+/* vers Slide 4 */
+#s4:target ~ #wrap { top:-2800px; }
+#s4:target ~ #wrap #nav li:first-child + li + li + li a { text-shadow: 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603; }
+#s4:target ~ #wrap #slide1 { background-position: 50% 150%; }
+#s4:target ~ #wrap #slide2 { background-position: 50% 100%; }
+#s4:target ~ #wrap #slide3 { background-position: 50% 50%; }
+#s4:target ~ #wrap #slide4 { background-position: 50% 0%; }
+#s4:target ~ #wrap #slide5 { background-position: 50% -50%; }
+/*#s4:target ~ #wrap #trooper { left:-1500px;top:-1000px; transform: rotate(-15deg); }
+#s4:target ~ #wrap #clone { left:-1000px;top: -800px; transform: rotate(-15deg); }*/
+
+/* vers Slide 5 */
+#s5:target ~ #wrap { top:-3800px; }
+#s5:target ~ #wrap #nav li:last-child a { text-shadow: 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603; }
+#s5:target ~ #wrap #slide1 { background-position: 50% 200%; }
+#s5:target ~ #wrap #slide2 { background-position: 50% 150%; }
+#s5:target ~ #wrap #slide3 { background-position: 50% 100%; }
+#s5:target ~ #wrap #slide4 { background-position: 50% 50%; }
+#s5:target ~ #wrap #slide5 { background-position: 50% 0%; }
+
